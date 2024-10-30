@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Web Comments Component</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Новостная статья</h1>
+        <p>Это пример текста статьи для демонстрации системы комментариев...</p>
+        <comments-section></comments-section>
+    </div>
+
+    <template id="comment-template">
+        <style>
+            .comment {
+                border: 1px solid #ccc;
+                padding: 8px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background: #f9f9f9;
+            }
+            .nested-comments {
+                margin-left: 20px;
+                margin-top: 10px;
+            }
+        </style>
+        <div class="comment">
+            <p><slot></slot></p>
+            <button class="like-button">Нравится (<span class="like-count">0</span>)</button>
+            <button class="reply-button">Ответить</button>
+            <button class="delete-button">Удалить</button>
+            <div class="nested-comments"></div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
